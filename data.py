@@ -7,7 +7,8 @@
 # example in the corpus and the dictionary.
 ###############################################################################
 
-import os, helper
+
+import os, helper, json
 from collections import Counter
 
 
@@ -57,6 +58,11 @@ class Instance(object):
     def add_label(self, label):
         self.label = label
 
+    def print_(self):
+        print (' sen 1: ', self.sentence1)
+        print (' sen 2: ', self.sentence2)
+        print (' label: ', self.label)
+
 
 class Corpus(object):
     """Corpus class which contains all information about train/dev/test corpus."""
@@ -78,7 +84,8 @@ class Corpus(object):
                 self.data.append(instance)
                 if len(self.data) == max_example:
                     break
-        else: 
+
+        else:
             assert os.path.exists(in_file)
             with open(in_file, 'r') as f:
                 for line in f:
@@ -95,7 +102,6 @@ class Corpus(object):
                             instance.add_label(1)
                         elif tokens[4] == 'contradiction':
                             instance.add_label(2)
-
                     self.data.append(instance)
                     if len(self.data) == max_example:
                         break

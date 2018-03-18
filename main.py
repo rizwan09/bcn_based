@@ -6,7 +6,8 @@
 # File Description: This script is the entry point of the entire pipeline.
 ###############################################################################
 
-import util, helper, data, train, os, sys, numpy, torch
+
+import util, helper, data, train, os, sys, numpy, torch, pickle, json
 from torch import optim
 from model import BCN
 
@@ -54,6 +55,7 @@ for task in task_names:
         else:
             dev_corpus.parse(args.data + task + '/dev.txt', task, args.tokenize)
             test_corpus.parse(args.data + task + '/test.txt', task, args.tokenize)
+
 
 print('train set size = ', len(train_corpus.data))
 print('development set size = ', len(dev_corpus.data))
@@ -105,3 +107,4 @@ if args.resume:
 
 train = train.Train(model, optimizer, dictionary, args, best_acc)
 train.train_epochs(train_corpus, dev_corpus, test_corpus, args.start_epoch, args.epochs)
+

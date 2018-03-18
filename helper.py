@@ -7,7 +7,11 @@
 # may come in handy at any point in the experiments.
 ###############################################################################
 
+<<<<<<< HEAD
 import re, os, glob, pickle, inspect, math, time, torch, util
+=======
+import re, os, glob, pickle, inspect, math, time, torch, util, json
+>>>>>>> f01bdf097e96094f8e5112f58748b1dd7dbea610
 import numpy as np
 from torch import optim
 from nltk import word_tokenize
@@ -55,7 +59,11 @@ def save_checkpoint(state, filename='./checkpoint.pth.tar'):
     torch.save(state, filename)
 
 
+<<<<<<< HEAD
 def get_optimizer(s):
+=======
+def get_optimizer(s, verbose = 0):
+>>>>>>> f01bdf097e96094f8e5112f58748b1dd7dbea610
     """
     Parse optimizer parameters.
     Input should be of the form:
@@ -74,6 +82,12 @@ def get_optimizer(s):
         method = s
         optim_params = {}
 
+<<<<<<< HEAD
+=======
+    if verbose: 
+        print (' method: ', method, ' optim_params: ', optim_params)
+
+>>>>>>> f01bdf097e96094f8e5112f58748b1dd7dbea610
     if method == 'adadelta':
         optim_fn = optim.Adadelta
     elif method == 'adagrad':
@@ -259,3 +273,7 @@ def get_splited_imdb_data(file_name, data_name='IMDB'):
                 elif line['split']==1: dev_d.append(line)
                 else: test_d.append(line)
         return train_d, dev_d, test_d
+<<<<<<< HEAD
+=======
+
+>>>>>>> f01bdf097e96094f8e5112f58748b1dd7dbea610
