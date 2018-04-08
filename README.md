@@ -8,6 +8,12 @@
 
  4) Train WAG full classifier from this selection outputs: (only on NLP (specially 2 has been used): For out of memory issue, some twicks has been done in imdb_train_WAG_full_classifier.py and only [sp : 0.015, 0.01][coherent: 2.0], [0.00075, 1.0] and full selection is used. total 4 versions, each with batch size 8, total batch size = 32
  python3 imdb_main_WAG_full_classifier.py --gpu 2 --model_file_name full_WAG_classifier_nlp.pth.tar --load_model -1 --sparsity 0 --coherent 0 --print_every 500 --plot_every 500
+ 
+ 
+ 
+ 
+ Sample code for spped up test; python3 imdb_test.py --gpu 2 --load_model 2 --classifier_file_name modle_sparsity_0.00075_coherent_1.0.pth.tar --selector_file_name modle_sparsity_0.00075_coherent_1.0.pth.tar
+
 
 
 
