@@ -9,7 +9,7 @@
  4) Train WAG full classifier run_imdb_WAG_full.py
  
  5) python3 imdb_main.py --gpu 2 --classifier_file_name full_WAG_classifier_nlp.pth.tar --WAG  --model_file_name WAG_model_sparsity_0.00075_coherent_1.0.pth.tar --load_model 1 --sparsit
-y 0.0005 --coherent 1.0 --classifier_file_name full_WAG_classifier_nlp.pth.tar and observe all the epochs
+y 0.00075 --coherent 1.0 --classifier_file_name full_WAG_classifier_nlp.pth.tar and observe all the epochs
 
  
  
